@@ -1,0 +1,13 @@
+bin/
+data/
+db/
+dist/
+logs/
+test-result/
+lib/
+tmp/
+modules/
+.idea/
+*.iml
+*.pid
+.DS_Store

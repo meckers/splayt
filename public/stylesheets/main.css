@@ -1,0 +1,38 @@
+
+.page {
+
+}
+
+
+
+/* This parent can be any width and height */
+.center-parent {
+    text-align: center;
+}
+
+/* The ghost, nudged to maintain perfect centering */
+.center-parent:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+/* The element to be centered, can
+   also be of any width and height */
+.vertically-centered {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+}
+
+.upload-area {
+    height: 400px;
+    border: 1px dashed #efefef;
+}
+
+.uploaded-image {
+    width: 400px;
+    margin: 20px;
+}
