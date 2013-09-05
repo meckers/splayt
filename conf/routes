@@ -7,6 +7,11 @@ GET     /                                       Application.index
 GET     /{id}                                   Splayt.showPage
 GET     /splayt/new                             Splayt.newUnit
 POST    /upload                                 Splayt.upload
+POST    /save                                   Splayt.save
+
+GET     /Examples/music-artist                  Examples.musicArtist
+GET     /Examples/nostalgia-community           Examples.nostalgiaCommunity
+GET     /Examples/personal-blog                 Examples.personalBlog
 
 
 # Ignore favicon requests

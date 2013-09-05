@@ -9,7 +9,7 @@ UploadManager = Class.extend({
                 var image = $("<img/>");
                 image.attr('src', '/uploads/' + filename);
                 image.addClass('uploaded-image');
-                $(".page").append(image);
+                $(".images").append(image);
             }
         });
     }

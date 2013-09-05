@@ -1,9 +1,21 @@
 #{extends 'main.html' /}
 #{set title:'Page' /}
 
-<div class="center-parent">
-    <div class="page text-center vertically-center">
-        <div class="hint">Add content by right clicking. You can also do it by dragging and dropping. Try it!</div>
-        <div class="upload-area"></div>
+#{extends 'main.html' /}
+#{set title:'Page' /}
+
+<script>
+    var _data = ${json ? json.raw() : "null"};
+</script>
+
+
+<div class="page wrap">
+
+    <div class="container">
+        <div class="images"></div>
+        <textarea class="content-addition-area"></textarea>
+        <input type="hidden" name="id" value="${id}"/>
+        <a class="btn btn-primary btn-lg save-button" title="Save document">Save</a>
     </div>
+
 </div>
