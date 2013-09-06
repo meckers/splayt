@@ -6,9 +6,18 @@ Page = Class.extend({
         //this.uploadManager = new UploadManager(".content-addition-area");
         this.editArea = $(".content-addition-area");
         this.listen();
-        this.removeStringsFromUploader();
+        //this.removeStringsFromUploader();
         this.populate();
         this.setDirty(false);
+        this.initHallo();
+    },
+
+    initHallo: function() {
+        this.editArea.hallo({
+            plugins: {
+                'halloformat': {}
+            }
+        });
     },
 
     listen: function() {
@@ -25,9 +34,13 @@ Page = Class.extend({
                 me.setDirty(false);
             });
         });
-        this    .editArea.keyup(function() {
+        this.editArea.on('hallomodified', function() {
             me.setDirty(true);
         });
+        /*
+        this.editArea.keyup(function() {
+            me.setDirty(true);
+        });*/
         this.editArea.autosize();
     },
 
