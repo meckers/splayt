@@ -1,6 +1,6 @@
 
 .page {
-    font-family: Georgia, serif;
+    font-family: Helvetica, sans;
     font-size: 20px;
 }
 
@@ -42,4 +42,8 @@
     display: block;
     height: 200px;
     background-color: #efefef;
+}
+
+.inline-instructions {
+    color: #909090;
 }

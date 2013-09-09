@@ -39,6 +39,11 @@ Page = Class.extend({
         this.editArea.on('hallomodified', function() {
             me.setDirty(true);
         });
+        this.editArea.on('halloactivated', function() {
+            if (me.editArea.find('.inline-instructions').length == 1) {
+                me.editArea.empty();
+            }
+        });
         /*
         this.editArea.keyup(function() {
             me.setDirty(true);
@@ -46,14 +51,9 @@ Page = Class.extend({
         this.editArea.autosize();
     },
 
-    makeEditable: function(element) {
-        $(element).attr('contentEditable', 'true');
-        $(element).focus();
-    },
-
     setDirty: function(dirty) {
         this.dirty = dirty;
-        document.title = this.editArea.val().substr(0, 20);
+        document.title = this.editArea.text().substr(0, 20);
         if (this.dirty) {
             document.title = "* " + document.title;
             $(this).prop('disabled', false);
