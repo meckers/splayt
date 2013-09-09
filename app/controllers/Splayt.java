@@ -54,12 +54,13 @@ public class Splayt extends Controller {
             map.put("_id", id);
             map.put("text", text);
 
-            JsonObject json = dbClient.find(JsonObject.class, id);
-
-            if (json != null) {
-                String rev = json.get("_rev").toString().replaceAll("\"", "");
-                map.put("_rev", rev);
-                dbClient.update(map);
+            if (dbClient.contains(id)) {
+                JsonObject json = dbClient.find(JsonObject.class, id);
+                if (json != null) {
+                    String rev = json.get("_rev").toString().replaceAll("\"", "");
+                    map.put("_rev", rev);
+                    dbClient.update(map);
+                }
             }
             else {
                 dbClient.save(map);

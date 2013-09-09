@@ -15,7 +15,9 @@ Page = Class.extend({
     initHallo: function() {
         this.editArea.hallo({
             plugins: {
-                'halloformat': {}
+                'halloformat': {},
+                'halloheadings' : {},
+                'hallojustify': {}
             }
         });
     },
@@ -27,7 +29,7 @@ Page = Class.extend({
         });*/
         $(".save-button").click(function() {
             var id = $("[name=id]").val();
-            var text = me.editArea.val();
+            var text = me.editArea.html();
             console.log("saving", id, text);
             $.post("/save", {"id": id, "text": text}, function(data) {
                 console.log("success", data);
@@ -64,7 +66,7 @@ Page = Class.extend({
     populate: function() {
         if (_data) {
             console.log('Populating text area with data', _data);
-            this.editArea.text(_data.text);
+            this.editArea.html(_data.text);
         }
     },
 
